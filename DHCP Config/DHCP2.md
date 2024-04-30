@@ -1,3 +1,4 @@
+```
 failover peer “failover-dhcp” {
   secondary;
   address 172.16.1.11;
@@ -20,3 +21,4 @@ subnet 172.16.1.0 netmask 255.255.255.0 {
               range 172.16.1.100 172.16.1.150;
         }
 }
+```
