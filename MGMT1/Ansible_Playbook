@@ -1,0 +1,27 @@
+- name: ggiinnoo SYS265
+  hosts: web
+  become: true
+  remote_user: deployer
+  vars:
+    firewalld_enable: true
+  roles:
+  - ggiinnoo.webserver
+
+  tasks:
+  - name: firewall http
+    firewalld:
+      port: 80/tcp
+    permanent: true
+    state: enabled
+
+  - name: firewall https
+    firewalld:
+      port: 443/tcp
+      permanent: true
+      state: enabled
+
+  handlers:
+    - name: firewall reload
+      systemd:
+        name: firewalld
+        state: restarted
