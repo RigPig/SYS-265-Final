@@ -1,4 +1,4 @@
----
+```
 version: "2"
 services:
   bookstack:
@@ -34,3 +34,4 @@ services:
     volumes:
       - /home/dockeruser/bookstack/bookstack_db_config
     restart: unless-stopped
+```
